@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RentaForm</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../../static/css/activityPage_style.css">
+  <link rel="stylesheet" href="../../static/css/style.css">
+</head>
+<body>
+
+  <div class="w3-top">
+    <div class="w3-bar w3-theme-d2 w3-left-align">
+      <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+      <a href="#" class="w3-bar-item w3-button w3-teal"><i class="fa fa-home w3-margin-right"></i></a>
+      <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Assistence</a>
+      <a href="#profile" id="profile" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Profile</a>    
+      <a href="#logout" id="logout" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Logout</a>
+    </div>
+  </div>
+  <div class="container" id ="fetch_results">
+    
+    <hr><hr>
+    <label for="subject"><b>Date interval</b></label>
+    <input type="text" placeholder="Insert date" name="datepicker" class="datepicker" id="start" style="text-align: center;"  required>
+
+    <label for="review"><b>EndDate</b></label>
+    <input type="text" placeholder="Insert date" name="datepicker" class="datepicker" id="end" style="text-align: center;"  required>
+
+    <label for="rating"><b>Starting Time</b></label>
+    <input type="text" placeholder="Set starting time" name="time" id="startTime" style="text-align: center;" required>
+
+    <label for="rating"><b>End Time</b></label>
+    <input type="text" placeholder="Set finish time" name="time" id="endTime" style="text-align: center;" required>
+
+    <button type="submit" id="btn">Submit</button>
+  </div>
+  <script src="https://weareoutman.github.io/clockpicker/dist/jquery-clockpicker.min.js"></script>
+  <link rel="stylesheet" href="https://weareoutman.github.io/clockpicker/dist/jquery-clockpicker.min.css"></link>
+  <script src="../../static/js/User/userPage_modifyActivities.js" type="text/javascript"></script>
+
+</body>
+</html>

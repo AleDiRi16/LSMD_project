@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>RentaForm</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../../static/css/activityPage_style.css">
+<link rel="stylesheet" href="../../static/css/style.css">
+</head>
+<body id="myPage">
+
+<!-- Navbar -->
+<div class="w3-top">
+ <div class="w3-bar w3-theme-d2 w3-left-align">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onclick="openNav()"><i class="fa fa-bars"></i></a>
+    <a href="#vehicles" id="vehicles" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Vehicles</a>
+    <a href="#reservation" id="reservation" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Reservations</a>
+    <a href="#reviews" id="reviews" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Reviews</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Assistence</a>
+    <a href="#analytic" id="1" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Analytic 1</a>
+    <a href="#analytic" id="2" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Analytic 2</a>    
+    <a href="#logout" id="logout" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Logout</a>
+  </div>
+</div>
+
+<div class="w3-content w3-margin-top" style="max-width:1400px;">
+
+    <!-- The Grid -->
+  <div class="w3-row-padding">
+  
+    <!-- Left Column -->
+    <div class="w3-third">
+      <br><br><br>
+      <div class="w3-white w3-text-grey w3-card-4">
+        <div class="w3-display-container">
+          <img src="../../static/img/user.png" style="padding:auto" alt="Avatar">
+          <div class="w3-display-bottomleft w3-container w3-text-black">
+          </div>
+        </div>
+        <div class="w3-container">
+          <p><i class="fa fa-user fa-fw w3-margin-right w3-large w3-text-teal"><p id="business_name"></p></i></p>
+          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"><p id="business_address"></p></i></p>
+          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"><p id="business_mail"></p></i></p>
+          <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal" ><p id="business_pn"></p></i></p>
+          <hr>
+
+          <!--p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Reviews</b></p>
+          <div class="w3-container" id="reviews_list"></div-->
+          <br>
+        </div>
+
+        
+      </div><br>
+      <div class="container w3-container w3-center w3-card w3-margin">
+        <b>INSERT NEW VEHICLE</b><br><br>
+        <label for="uname"><b>AutomaticTrasmission</b></label><br><br>
+        <select name="AutomaticTrasmission" id="automaticTrasmission">
+          <option value="true">Automatic</option>
+          <option value="false">Manual</option>
+        </select><br><br>
+    
+        <label for="brand"><b>Brand</b></label><br><br>
+        <input type="text" placeholder="Enter Brand" name="brand" id="brand" required><br><br>
+    
+        <label for="name"><b>Name</b></label><br><br>
+        <input type="text" placeholder="Enter Name" name="name" id="name" required><br><br>
+    
+        <label for="year"><b>Year</b></label><br><br>
+        <input type="text" placeholder="Enter Year" name="year" id="year" required><br><br>
+    
+        <label for="price"><b>Price</b></label><br><br>
+        <input type="text" placeholder="Enter Price" name="price" id="price" required><br><br>
+    
+        <label for="category"><b>Category</b></label><br><br>
+        <input type="text" placeholder="Enter Category" name="category" id="category" required><br><br>
+            
+        <button name="submit_veichle" id="submit_veichle">Submit</button>
+      </div>
+    <!-- End Left Column -->
+    </div>
+
+    <!-- Right Column -->
+    <div class="w3-twothird">
+      <br><br>
+      <div class="w3-container w3-card w3-white w3-margin-bottom w3-center">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Available vehicles</h2>
+        <input type="text" placeholder="Search.." id="car_input" style="width: 50%;">
+            <select name="order" id="car_order" onchange="change_param_car()">
+                <option value="1">Brand ascending</option>
+                <option value="2">Brand descending</option>
+                <option value="3">Car first</option>
+                <option value="4">Motorcycle first</option>
+            </select>
+        <div class="w3-container">
+          <div class="w3-card w3-margin">
+            <div class="w3-ul w3-hoverable w3-white "  id="list"></div>
+          </div>
+          <hr>
+          <a href="#" class="previous round" id="previous">&#8249;</a>
+          <a href="#" class="next round" id="next" >&#8250;</a>
+
+        </div>
+        <hr>
+      </div>  
+    <!-- End Right Column -->
+    </div>
+    
+  <!-- End Grid -->
+  </div>
+  
+  
+  
+  <!-- End Page Container -->
+</div>
+
+<!-- Contact Container -->
+<div class="w3-container w3-padding-64 w3-theme-l5" id="contact">
+  <div class="w3-row">
+    <div class="w3-col m5">
+      <div class="w3-padding-16"><span class="w3-xlarge w3-border-teal w3-bottombar">Contact Us</span></div>
+        <h3>PROBLEM?</h3>
+        <p>Send us a ticket, our staff will try to solve all your needs</p>
+      </div>
+      <div class="w3-col m7">
+        
+        <div class="w3-section">      
+          <label>Title</label>
+          <input class="w3-input" type="text" name="Name"  id="title" required>
+        </div>
+        <div class="w3-section">      
+          <label>Description</label>
+          <input class="w3-input" type="text" name="Email" id="description" required>
+        </div>
+        <div class="w3-section">      
+          <label>Category</label>
+          <input class="w3-input" type="text" name="Message" id="category" required>
+        </div>  
+        
+        <button class="w3-button w3-right w3-theme" id="notificationBtn">Send</button>
+        <label>|</label>
+        <button class="w3-button w3-right w3-theme" id="ticketList">Ticket List</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-32 w3-theme-d1 w3-center">
+</footer>
+<script src="https://code.jquery.com/jquery-3.4.0.min.js" type="text/javascript"></script>
+<script src="../../static/js/BusinessActivity/businessPage_vehicles.js" type="text/javascript"></script>
+<script src="../../static/js/notification.js" type="text/javascript"></script>
+</html>

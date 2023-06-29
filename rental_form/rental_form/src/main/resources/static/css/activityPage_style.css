@@ -1,0 +1,59 @@
+.ui-datepicker-close {
+  display: none !important;
+}
+
+select {
+  /* Reset */
+  /*appearance: none;*/
+  border: 1;
+  outline: 0;
+  font: inherit;
+  /* Personalize */
+  width: 20em;
+  height: 3.2em;
+  padding: 0 4em 0 1em;
+  background: url(https://upload.wikimedia.org/wikipedia/commons/9/9d/Caret_down_font_awesome_whitevariation.svg);
+  border-color: #d2cccc;
+  
+  cursor: pointer;
+  /* <option> colors */
+  .option {
+    color: black;
+   
+  }
+  /* Remove focus outline */
+  &:focus {
+    outline: none;
+  }
+  /* Remove IE arrow */
+  &::-ms-expand {
+    display: none;
+  }
+}
+
+.previous {
+  background-color: #0a0808;
+  color: rgb(248, 248, 248);
+}
+
+.next {
+  background-color: #060707;
+  color: white;
+}
+
+.round {
+  border-radius: 50%;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: black;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: black;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: black;
+}
